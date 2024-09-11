@@ -2,6 +2,7 @@ import { React, useState, useEffect, useCallback } from "react";
 import NewsItem from "./NewsItem";
 import InfiniteScroll
     from "react-infinite-scroll-component";
+    import { REACT_API_KEY } from "../config";
 
 function News(props) {
     let category = props.category;
@@ -14,7 +15,7 @@ function News(props) {
     const fetchData = async () => {
         const url =
 `https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page
-            }&apiKey=9e2908d9bef945d6b21d9924bbaae0bd`;
+            }&apiKey=${REACT_API_KEY}`;
         setPage(page + 1);
         let data = await fetch(url);
         let parsedData = await data.json();
