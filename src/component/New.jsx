@@ -1,9 +1,9 @@
-
 import { React, useState, useEffect, useCallback } from "react";
 import NewsItem from "./NewsItem";
 import InfiniteScroll
     from "react-infinite-scroll-component";
-    import { REACT_API_KEY } from "../config";
+    
+const REACT_API_KEY = process.env.REACT_API_KEY;
 
 function News(props) {
     let category = props.category;
